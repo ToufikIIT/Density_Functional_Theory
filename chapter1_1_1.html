@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.1.1 Quantum Mechanical Many-Electron Problem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fefefe;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    a {
+      text-decoration: none;
+      color: #3498db;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>1.1.1 Quantum Mechanical Many-Electron Problem</h1>
+
+  <p>The material world we experience is fundamentally composed of electrons and nuclei. Most physical, chemical, and condensed matter properties emerge from the behavior of electrons. Even though a few (or many) nuclei are involved, it's the electrons that primarily govern observable behavior.</p>
+
+  <h2>⚛️ Electrostatic Interactions and Quantum Description</h2>
+  <ul>
+    <li>At the atomic scale, electrons and nuclei interact through Coulomb forces.</li>
+    <li>For a nucleus with charge \( Z \) at position \( \vec{R} \), and an electron at \( \vec{r} \), the electrostatic potential energy is:
+      \[
+        V(\vec{r}) = -\frac{Z}{|\vec{r} - \vec{R}|}
+      \]
+    </li>
+    <li>Two nuclei at positions \( \vec{R} \) and \( \vec{R}' \) repel each other via \( Z^2 / |\vec{R} - \vec{R}'| \).</li>
+  </ul>
+
+  <p>Electrons cannot be described by classical mechanics due to their microscopic nature. Instead, quantum mechanics is required. This includes treatment of them as indistinguishable fermions obeying the Pauli exclusion principle.</p>
+
+  <p>In lighter elements, valence electrons often move at speeds significantly less than light, allowing us to ignore relativistic corrections.</p>
+
+  <h2>🔬 The Goal of Theory</h2>
+  <p>Theory seeks to derive material properties (molecular structure, chemical reactivity, solid-state behavior) from basic physical principles. In particular, <strong>ground-state properties</strong> are of utmost interest.</p>
+
+  <p>This gives rise to <strong>Density Functional Theory (DFT)</strong> — a formalism that reformulates quantum mechanics based on the electron density \( \rho(\vec{r}) \), rather than the many-body wave function \( \Psi(\vec{r}_1, ..., \vec{r}_N) \).</p>
+
+  <h2>📘 What This Text Covers</h2>
+  <p>This primer focuses on introducing DFT for non-relativistic Coulomb systems. The reader is expected to have some background in quantum mechanics, particularly in working with one-particle wavefunctions \( \psi(\vec{r}) \).</p>
+
+  <p>The many-body wavefunction \( \Psi(\vec{r}_1, \dots, \vec{r}_N) \) is introduced and replaced by the electron density \( n(\vec{r}) \). All relevant energy terms become functionals of this density.</p>
+
+  <p>The two most widely used approximations to the energy functional are:</p>
+  <ul>
+    <li><strong>Local Spin Density Approximation (LSDA)</strong></li>
+    <li><strong>Generalized Gradient Approximation (GGA)</strong></li>
+  </ul>
+
+  <h2>📊 Applications and Approximations</h2>
+  <ul>
+    <li>The theory is applied to molecules, solids, surfaces, reactions, ionization energies, etc.</li>
+    <li>Accuracy depends heavily on approximations to the exchange–correlation functional.</li>
+    <li>The book introduces commonly used approximations and their justifications.</li>
+  </ul>
+
+  <h2>🧠 Approach of This Book</h2>
+  <ul>
+    <li>Self-contained introduction — minimal need for external references.</li>
+    <li>Atomic units used throughout (\( \hbar = e = m = 1 \)) for simplicity.</li>
+    <li>Several example systems are explored (atoms, molecules, solids).</li>
+  </ul>
+
+  <p><a href="index.html">← Back to Index</a> | <a href="chapter1_1_2.html">Next: 1.1.2 Summary of Kohn–Sham Spin-DFT →</a></p>
+</body>
+</html>
