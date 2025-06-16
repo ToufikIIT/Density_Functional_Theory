@@ -61,7 +61,7 @@ This repository includes structured explanations of:
 
 **Sk Toufik Haque**  
  IIT Kharagpur  
-Passionate about quantum mechanics, DFT, and open science.
+Passionate about quantum mechanics, DFT.
 
 ---
 
