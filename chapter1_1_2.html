@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.1.2 Summary of Kohn–Sham Spin-Density Functional Theory</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fefefe;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .eq {
+      background-color: #f8f8f8;
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      border-left: 4px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>1.1.2 Summary of Kohn–Sham Spin-Density Functional Theory</h1>
+
+  <p>This section presents a summary of the <strong>Kohn–Sham spin-density functional method</strong>, the most widely used approach in condensed-matter physics and quantum chemistry for electronic structure calculations. It simplifies the problem of many-body interactions by introducing non-interacting reference systems.</p>
+
+  <p>We are concerned with finding the <strong>ground-state total energy</strong> \( E \) and spin densities \( n_\uparrow(\vec{r}), n_\downarrow(\vec{r}) \) of a system of \( N \) interacting electrons in an external potential \( v(\vec{r}) \).</p>
+
+  <h2>🧮 Kohn–Sham Equations</h2>
+  <p>The Kohn–Sham approach rewrites the many-body problem in terms of a set of single-particle equations. These auxiliary equations involve an effective potential and are easier to solve.</p>
+
+  <div class="eq">
+    \[
+      \left( -\frac{1}{2} \nabla^2 + v(\vec{r}) + u[n](\vec{r}) + v_{xc}^{\sigma}([n_\uparrow,n_\downarrow];\vec{r}) \right) \varphi_{\alpha\sigma}(\vec{r}) = \varepsilon_{\alpha\sigma} \varphi_{\alpha\sigma}(\vec{r})
+    \]
+    <p><em>(1.1)</em> — Kohn–Sham equation with effective potential for each spin orbital</p>
+  </div>
+
+  <div class="eq">
+    \[
+      n_\sigma(\vec{r}) = \sum_\alpha \theta(\mu - \varepsilon_{\alpha\sigma}) |\varphi_{\alpha\sigma}(\vec{r})|^2
+    \]
+    <p><em>(1.2)</em> — Defines spin density as a sum over occupied orbitals</p>
+  </div>
+
+  <div class="eq">
+    \[
+      u[n](\vec{r}) = \int d^3r' \frac{n(\vec{r}')}{|\vec{r} - \vec{r}'|}
+    \]
+    <p><em>(1.3)</em> — Classical Hartree potential: electron–electron repulsion</p>
+  </div>
+
+  <div class="eq">
+    \[
+      n(\vec{r}) = n_\uparrow(\vec{r}) + n_\downarrow(\vec{r})
+    \]
+    <p><em>(1.4)</em> — Total electronic density from spin components</p>
+  </div>
+
+  <h2>🔋 Total Energy Functional</h2>
+  <p>The total energy of the interacting system is expressed as a sum of terms depending on spin densities:</p>
+
+  <div class="eq">
+    \[
+      E = T_s[n_\uparrow,n_\downarrow] + \int d^3r\, n(\vec{r})v(\vec{r}) + U[n] + E_{xc}[n_\uparrow,n_\downarrow]
+    \]
+    <p><em>(1.6)</em> — Total energy functional in Kohn–Sham formalism</p>
+  </div>
+
+  <p>Where each term is:</p>
+  <ul>
+    <li><strong>\( T_s \)</strong>: kinetic energy of non-interacting reference system</li>
+    <li><strong>\( \int n v \)</strong>: interaction with external potential</li>
+    <li><strong>\( U[n] \)</strong>: Hartree repulsion</li>
+    <li><strong>\( E_{xc} \)</strong>: exchange–correlation energy</li>
+  </ul>
+
+  <div class="eq">
+    \[
+      T_s[n_\uparrow,n_\downarrow] = \sum_\alpha \theta(\mu - \varepsilon_{\alpha\sigma})\langle \varphi_{\alpha\sigma}|(-\frac{1}{2}\nabla^2)|\varphi_{\alpha\sigma} \rangle
+    \]
+    <p><em>(1.7)</em> — Non-interacting kinetic energy</p>
+  </div>
+
+  <div class="eq">
+    \[
+      \langle \varphi |\hat{O}| \varphi \rangle = \int d^3r\, \varphi^*(\vec{r})\hat{O}\varphi(\vec{r})
+    \]
+    <p><em>(1.8)</em> — General expectation value formula</p>
+  </div>
+
+  <div class="eq">
+    \[
+      U[n] = \frac{1}{2}\int d^3r \int d^3r' \frac{n(\vec{r})n(\vec{r}')}{|\vec{r} - \vec{r}'|}
+    \]
+    <p><em>(1.9)</em> — Electrostatic (Hartree) interaction energy</p>
+  </div>
+
+  <div class="eq">
+    \[
+      v_{xc}^\sigma([n_\uparrow,n_\downarrow]; \vec{r}) = \frac{\delta E_{xc}[n_\uparrow,n_\downarrow]}{\delta n_\sigma(\vec{r})}
+    \]
+    <p><em>(1.10)</em> — Exchange–correlation potential as functional derivative</p>
+  </div>
+
+  <h2>🔬 Exchange–Correlation Approximations</h2>
+  <p>Since the exact form of \( E_{xc} \) is unknown, approximations are crucial for practical applications:</p>
+
+  <h3>Local Spin Density Approximation (LSD)</h3>
+  <div class="eq">
+    \[
+      E_{xc}^{LSD}[n_\uparrow,n_\downarrow] = \int d^3r\, n(\vec{r})\varepsilon_{xc}(n_\uparrow(\vec{r}), n_\downarrow(\vec{r}))
+    \]
+    <p><em>(1.11)</em> — Uses local value of the densities</p>
+  </div>
+
+  <h3>Generalized Gradient Approximation (GGA)</h3>
+  <div class="eq">
+    \[
+      E_{xc}^{GGA}[n_\uparrow,n_\downarrow] = \int d^3r\, f(n_\uparrow, n_\downarrow, \nabla n_\uparrow, \nabla n_\downarrow)
+    \]
+    <p><em>(1.12)</em> — Includes density gradients for improved accuracy</p>
+  </div>
+
+  <p>GGA improves upon LSD by including variations in density, leading to better predictions for molecular properties like atomization energy, bond lengths, and dissociation energies.</p>
+
+  <h2>📌 Key Insights</h2>
+  <ul>
+    <li>The exact \( E_{xc} \) depends on both densities and their gradients; practical use requires approximations.</li>
+    <li>While \( E_{xc} \) is small relative to total energy, its accurate approximation is crucial for meaningful results.</li>
+    <li>LSD and GGA form the basis of modern DFT codes.</li>
+    <li>The method simplifies the complex many-electron problem to a self-consistent iteration of single-particle equations.</li>
+  </ul>
+
+  <p><a href="chapter1_1_1.html">← Back: 1.1.1 Quantum Mechanical Many-Electron Problem</a> | <a href="chapter1_2_1.html">Next: 1.2.1 Wavefunctions and Their Interpretation →</a></p>
+</body>
+</html>
