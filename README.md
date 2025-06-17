@@ -8,7 +8,7 @@ Welcome to my personal documentation and learning repository for **Density Funct
 
 | Folder/File            | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
-| `index.html`           | Main landing page (to be created)                                           |
+| `index.html`           | Main landing page                                           |
 | `chapter1_1_1.html`     | ✅ **Quantum Mechanical Many-Electron Problem**                            |
 | `chapter1_1_2.html`     | ✅ **Summary of Kohn–Sham Spin-Density Functional Theory**                 |
 | *(More coming soon)*   | Other sections such as wavefunctions, exchange-correlation energy, etc.    |
