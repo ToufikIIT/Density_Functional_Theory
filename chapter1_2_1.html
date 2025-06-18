@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.2.1 Wavefunctions and Their Interpretation</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fefefe;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .eq {
+      background-color: #f8f8f8;
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      border-left: 4px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>1.2.1 Wavefunctions and Their Interpretation</h1>
+
+  <p>In quantum mechanics, the physical state of an isolated system of electrons is described by a many-body wavefunction \( \Psi(\vec{r}_1, \ldots, \vec{r}_N) \). This complex-valued function is square-integrable and encodes all physical observables of the system.</p>
+
+  <h2>Normalization</h2>
+  <p>The wavefunction must satisfy the normalization condition:</p>
+  <div class="eq">
+    \[
+    \int d^3r_1 \cdots d^3r_N \; |\Psi(\vec{r}_1, \ldots, \vec{r}_N)|^2 = 1
+    \]</div>
+  <p>This ensures that the total probability of finding the electrons somewhere in space is unity.</p>
+
+  <h2>Antisymmetry and Fermions</h2>
+  <p>Because electrons are indistinguishable fermions, the wavefunction must be antisymmetric under the exchange of any two electron coordinates:</p>
+  <div class="eq">
+    \[
+    \Psi(\ldots, \vec{r}_i, \ldots, \vec{r}_j, \ldots) = -\Psi(\ldots, \vec{r}_j, \ldots, \vec{r}_i, \ldots)
+    \]</div>
+  <p>This antisymmetry leads to the Pauli exclusion principle, which prevents any two electrons from occupying the same quantum state.</p>
+
+  <h2>Observables from the Wavefunction</h2>
+  <p>All measurable physical quantities (observables) of the system, such as energy or electron density, can be computed from \( \Psi \). In particular, the <strong>one-particle density</strong> is a key quantity in DFT, defined as:</p>
+  <div class="eq">
+    \[
+    n(\vec{r}) = N \int d^3r_2 \ldots d^3r_N \; |\Psi(\vec{r}, \vec{r}_2, \ldots, \vec{r}_N)|^2
+    \]</div>
+  <p>This gives the probability density of finding one electron at position \( \vec{r} \), independent of the positions of the other electrons.</p>
+
+  <h2>Interpretation of \( |\Psi|^2 \)</h2>
+  <p>The quantity \( |\Psi(\vec{r}_1, \ldots, \vec{r}_N)|^2 \) represents the probability density of finding the first electron near \( \vec{r}_1 \), the second near \( \vec{r}_2 \), and so on. This probabilistic interpretation is foundational to quantum mechanics.</p>
+
+  <h2>Why Use Densities?</h2>
+  <p>Although \( \Psi \) contains complete information, it depends on \( 3N \) variables, making it computationally intractable for large \( N \). In contrast, the one-particle density \( n(\vec{r}) \) depends only on 3 variables and is the basic quantity in DFT. The central idea of DFT is that all ground-state properties of a system are functionals of \( n(\vec{r}) \), not \( \Psi \).</p>
+
+  <p><a href="chapter1_1_2.html">← Back: 1.1.2 Kohn–Sham Spin-Density Functional Theory</a> | <a href="chapter1_2_2.html">Next: 1.2.2 Non-interacting Electrons →</a></p>
+</body>
+</html>
