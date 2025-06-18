@@ -39,13 +39,36 @@
   <p>We are concerned with finding the <strong>ground-state total energy</strong> \( E \) and spin densities \( n_\uparrow(\vec{r}), n_\downarrow(\vec{r}) \) of a system of \( N \) interacting electrons in an external potential \( v(\vec{r}) \).</p>
 
   <h2>🧮 Kohn–Sham Equations</h2>
-  <p>The Kohn–Sham approach rewrites the many-body problem in terms of a set of single-particle equations. These auxiliary equations involve an effective potential and are easier to solve.</p>
+  <p>The Kohn–Sham approach rewrites the many-body problem in terms of a set of single-particle equations. These auxiliary equations involve an effective potential and are easier to solve.
+    <br>
+    The ground-state total energy
+ E and spin densities n↑(r), n↓(r) for a collection of N electrons interacting
+ with one another and with an external potential v(r)</p>
 
   <div class="eq">
     \[
       \left( -\frac{1}{2} \nabla^2 + v(\vec{r}) + u[n](\vec{r}) + v_{xc}^{\sigma}([n_\uparrow,n_\downarrow];\vec{r}) \right) \varphi_{\alpha\sigma}(\vec{r}) = \varepsilon_{\alpha\sigma} \varphi_{\alpha\sigma}(\vec{r})
     \]
     <p><em>(1.1)</em> — Kohn–Sham equation with effective potential for each spin orbital</p>
+  </div>
+  
+  <div>
+     1. \[\left( -\frac{1}{2} \nabla^2 \right) \] :            Kinetic energy operator.
+  </div>
+  <div>
+     2. \[\left( v(\vec{r}) \right) \] :            External Potential.
+  </div>
+  <div>
+     3. \[\left( u[n](\vec{r}) \right) \] :            Hatree potential;Repulsion from electrons.
+  </div>
+  <div>
+     4. \[\left( v_{xc}^{\sigma}([n_\uparrow,n_\downarrow];\vec{r} \right) \] :            Exchange Exchange–Correlation potential.
+  </div>
+  <span>
+     5. \[\left( \varphi_{\alpha\sigma}(\vec{r}) \right) \] :            wavefunction.
+  </span>
+  <div>
+     6. \[\left(\varepsilon_{\alpha\sigma}\right) \] :            Eigen Value.
   </div>
 
   <div class="eq">
@@ -54,6 +77,9 @@
     \]
     <p><em>(1.2)</em> — Defines spin density as a sum over occupied orbitals</p>
   </div>
+  <p>
+    \[\left(\theta(\mu - \varepsilon_{\alpha\sigma})\right) \] :  Heaviside step function.[ 1 (if orbital is occupied) , 0 otherwise].
+  </p>
 
   <div class="eq">
     \[
