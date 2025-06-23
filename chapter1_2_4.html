@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.2.4 Hellmann–Feynman Theorem</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fefefe;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .eq {
+      background-color: #f8f8f8;
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      border-left: 4px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>1.2.4 Hellmann–Feynman Theorem</h1>
+
+  <p>The <strong>Hellmann–Feynman theorem</strong> relates the derivative of the energy of a quantum system with respect to a parameter to the expectation value of the derivative of the Hamiltonian. This is particularly useful when computing forces in quantum systems.</p>
+
+  <p>If the Hamiltonian \( \hat{H}_\lambda \) depends on a parameter \( \lambda \), then for a normalized eigenfunction \( \Psi_\lambda \), the energy \( E_\lambda \) is given by:</p>
+  <div class="eq">
+    \[ E_\lambda = \langle \Psi_\lambda | \hat{H}_\lambda | \Psi_\lambda \rangle \quad \text{(1.33)} \]
+  </div>
+
+  <p>Then the derivative of energy with respect to \( \lambda \) is:</p>
+  <div class="eq">
+    \[ \frac{dE_\lambda}{d\lambda} = \left.\frac{d}{d\lambda} \langle \Psi_\lambda | \hat{H}_\lambda | \Psi_\lambda \rangle \right|_{\lambda} + \left\langle \Psi_\lambda \left| \frac{\partial \hat{H}_\lambda}{\partial \lambda} \right| \Psi_\lambda \right\rangle \quad \text{(1.34)} \]
+  </div>
+
+  <p>By the variational principle, the first term vanishes, and we get the <strong>Hellmann–Feynman theorem</strong>:</p>
+  <div class="eq">
+    \[ \frac{dE_\lambda}{d\lambda} = \left\langle \Psi_\lambda \left| \frac{\partial \hat{H}_\lambda}{\partial \lambda} \right| \Psi_\lambda \right\rangle \quad \text{(1.35)} \]
+  </div>
+
+  <h2>Application to Electrostatic Forces</h2>
+  <p>This result is central to computing <strong>forces on nuclei</strong> in quantum chemistry. Let \( \vec{r}_i \) denote the position of the \( i \)-th electron and \( \vec{R}_I \) that of the \( I \)-th nucleus (with atomic number \( Z_I \)). The full Hamiltonian becomes:</p>
+  <div class="eq">
+    \[
+    \hat{H} = -\frac{1}{2} \sum_{i=1}^N \nabla_i^2 + \sum_{i=1}^N v(\vec{r}_i) - \sum_{i,I} \frac{Z_I}{|\vec{r}_i - \vec{R}_I|} + \frac{1}{2} \sum_{i \ne j} \frac{1}{|\vec{r}_i - \vec{r}_j|} + \frac{1}{2} \sum_{I \ne J} \frac{Z_I Z_J}{|\vec{R}_I - \vec{R}_J|} \quad \text{(1.36)}
+    \]
+  </div>
+
+  <p>To calculate the force on nucleus \( I \), we compute the derivative of total energy with respect to \( \vec{R}_I \):</p>
+  <div class="eq">
+    \[
+    -\frac{\partial E}{\partial \vec{R}_I} = \left\langle \Psi \left| \frac{\partial \hat{H}}{\partial \vec{R}_I} \right| \Psi \right\rangle
+    \]
+    <p>This leads to:</p>
+    \[
+    = \int d^3r \, n(\vec{r}) \frac{Z_I (\vec{r} - \vec{R}_I)}{|\vec{r} - \vec{R}_I|^3} + \sum_{J \ne I} \frac{Z_I Z_J (\vec{R}_I - \vec{R}_J)}{|\vec{R}_I - \vec{R}_J|^3} \quad \text{(1.37)}
+    \]
+  </div>
+
+  <p>This gives the electrostatic force on nucleus \( I \) from electrons and other nuclei. Thus, the <strong>Hellmann–Feynman theorem</strong> enables direct computation of forces from quantum-mechanical expectation values.</p>
+
+  <p><a href="chapter1_2_3.html">← Back: 1.2.3 Wavefunction Variational Principle</a> | <a href="chapter1_2_5.html">Next: 1.2.5 Virial Theorem →</a></p>
+</body>
+</html>
