@@ -6,13 +6,20 @@ Welcome to my personal documentation and learning repository for **Density Funct
 
 ## 📂 Repository Structure
 
-| Folder/File            | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| `index.html`           | Main landing page                                           |
+| Folder/File             | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| `index.html`            | Main landing page                                                           |
 | `chapter1_1_1.html`     | ✅ **Quantum Mechanical Many-Electron Problem**                            |
 | `chapter1_1_2.html`     | ✅ **Summary of Kohn–Sham Spin-Density Functional Theory**                 |
-| *(More coming soon)*   | Other sections such as wavefunctions, exchange-correlation energy, etc.    |
-| `README.md`            | This file – overview and guidance                                           |
+| `chapter1_2_1.html`     | ✅ **Wavefunctions and Their Interpretation**                              |
+| `chapter1_2_2.html`     | ✅ **Wavefunctions for Non-Interacting Electrons**                         |
+| `chapter1_2_3.html`     | ✅ **Wavefunction Variational Principle**                                  |
+| `chapter1_2_4.html`     | ✅ **Hellmann–Feynman Theorem**                                            |
+| `chapter1_2_5.html`     | ✅ **Virial Theorem**                                                      |
+| `chapter1_3_1.html`     | ✅ **Introduction to Density Functionals**                                 |
+| `chapter1_3_2.html`     | ✅ **Density Variational Principle**                                       |
+| *(More coming soon)*    | Other sections such as Exchange–Correlation Energy, LSD/GGA, etc.         |
+| `README.md`             | This file – overview and guidance                                           |
 
 ---
 
@@ -60,7 +67,7 @@ This repository includes structured explanations of:
 ## 🧑‍🔬 Author
 
 **Sk Toufik Haque**  
- IIT Kharagpur  
+IIT Kharagpur  
 Passionate about quantum mechanics, DFT.
 
 ---
@@ -74,4 +81,3 @@ Pull requests, suggestions, and feedback are welcome. This is a personal learnin
 ## 📄 License
 
 This project is for educational purposes. All book content referenced is the intellectual property of the original authors and publishers.
-
