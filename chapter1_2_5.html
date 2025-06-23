@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.2.4 Hellmann–Feynman and 1.2.5 Virial Theorems</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fefefe;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    .eq {
+      background-color: #f8f8f8;
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      border-left: 4px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>1.2.5 Virial Theorem</h1>
+
+  <p>The virial theorem connects kinetic and potential energy under scaling. Consider a scaled wavefunction \( \Psi_\gamma(\vec{r}_1, ..., \vec{r}_N) = \gamma^{3N/2} \Psi(\gamma \vec{r}_1, ..., \gamma \vec{r}_N) \):</p>
+
+  <div class="eq">
+    \[ \langle \Psi_\gamma | \Psi_\gamma \rangle = 1 \tag{1.39} \]
+  </div>
+
+  <p>The scaled density becomes:</p>
+  <div class="eq">
+    \[ n_\gamma(\vec{r}) = \gamma^3 n(\gamma \vec{r}) \tag{1.40} \]
+  </div>
+
+  <div class="eq">
+    \[ \int d^3r \; n_\gamma(\vec{r}) = N \tag{1.41} \]</div>
+
+  <p>By minimizing \( \langle T + V \rangle \) with respect to \( \gamma \), we obtain:</p>
+  <div class="eq">
+    \[ \left. \frac{d}{d\gamma} \langle \Psi_\gamma | \hat{T} + \hat{V} | \Psi_\gamma \rangle \right|_{\gamma=1} = 0 \tag{1.42} \]
+  </div>
+
+  <p>Since \( \hat{T} \sim \gamma^2 \):</p>
+  <div class="eq">
+    \[ \langle \Psi_\gamma | \hat{T} | \Psi_\gamma \rangle = \gamma^2 \langle \Psi | \hat{T} | \Psi \rangle \tag{1.43} \]</div>
+
+  <div class="eq">
+    \[ 2 \langle \hat{T} \rangle + \left. \frac{d}{d\gamma} \langle \hat{V} \rangle \right|_{\gamma=1} = 0 \tag{1.44} \]</div>
+
+  <div class="eq">
+    \[ 2 \langle \hat{T} \rangle - \sum_{i=1}^N \left\langle \vec{r}_i \cdot \nabla_i \hat{V} \right\rangle = 0 \tag{1.45} \]</div>
+
+  <p>If \( \hat{V} \sim \gamma^n \), then</p>
+  <div class="eq">
+    \[ \langle \hat{V}_\gamma \rangle = \gamma^n \langle \hat{V} \rangle \tag{1.47} \]</div>
+
+  <div class="eq">
+    \[ 2 \langle \hat{T} \rangle - n \langle \hat{V} \rangle = 0 \tag{1.48} \]</div>
+
+  <p>For Coulombic systems (e.g. Eq. (1.36)), \( n = -1 \), yielding:</p>
+  <div class="eq">
+    \[ 2 \langle \hat{T} \rangle + \langle \hat{V} \rangle = 0 \]</div>
+
+  <p>This relation helps derive energy expressions and test density approximations. When Hellmann–Feynman forces vanish (Eq. 1.37), the system is at equilibrium, and this virial relation becomes exact.</p>
+
+  <p><a href="chapter1_2_3.html">← Back: 1.2.3 Wavefunction Variational Principle</a> | <a href="chapter1_3_1.html">Next: 1.3.1 Overview of Density Functionals →</a></p>
+</body>
+</html>
