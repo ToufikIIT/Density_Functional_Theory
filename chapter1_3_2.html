@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.3.2 Density Variational Principle</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fefefe;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    .eq {
+      background-color: #f8f8f8;
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      border-left: 4px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>1.3.2 Density Variational Principle</h1>
+
+  <p>We aim to derive a density-functional analog of the wavefunction variational principle (Eq. (1.30)). Unlike the traditional proof of Hohenberg–Kohn theorem by contradiction, this approach uses a constructive framework.</p>
+
+  <p>From the variational principle:</p>
+  <div class="eq">
+    \[ E = \min_{\Psi} \langle \Psi | \hat{H} | \Psi \rangle \tag{1.53} \]
+  </div>
+
+  <p>We restrict this minimization to all antisymmetric N-particle wavefunctions \( \Psi \).</p>
+
+  <p>Now, we divide the optimization in two steps. First, fix a density \( n(\vec{r}) \). All wavefunctions that yield this same density form a subset. Within that subset, minimize the energy:</p>
+  <div class="eq">
+    \[ \min_{\Psi \to n} \langle \Psi | \hat{H} | \Psi \rangle = \min_{\Psi \to n} \langle \Psi | \hat{T} + \hat{V}_{ee} | \Psi \rangle + \int d^3r\, n(\vec{r})v(\vec{r}) \tag{1.54} \]
+  </div>
+
+  <p>Define the universal functional:</p>
+  <div class="eq">
+    \[ F[n] = \min_{\Psi \to n} \langle \Psi | \hat{T} + \hat{V}_{ee} | \Psi \rangle \tag{1.55} \]</div>
+
+  <p>Then, the full variational principle becomes:</p>
+  <div class="eq">
+    \[ E = \min_n \left[ F[n] + \int d^3r\, v(\vec{r}) n(\vec{r}) \right] \tag{1.56} \]</div>
+
+  <p>The density that minimizes this expression is the ground-state density. To ensure particle number conservation, we introduce a Lagrange multiplier \( \mu \):</p>
+
+  <div class="eq">
+    \[ \delta \left\{ F[n] + \int d^3r\, v(\vec{r})n(\vec{r}) - \mu \int d^3r\, n(\vec{r}) \right\} = 0 \tag{1.57} \]</div>
+
+  <p>This leads to the Euler–Lagrange equation:</p>
+  <div class="eq">
+    \[ \frac{\delta F[n]}{\delta n(\vec{r})} + v(\vec{r}) = \mu \tag{1.58} \]</div>
+
+  <p>This equation determines the ground-state density. The external potential \( v(\vec{r}) \) is uniquely determined by the ground-state density, up to a constant. Thus, the functional \( F[n] \) is universal.</p>
+
+  <p>In spin-dependent systems, the same logic applies to spin densities \( n_\uparrow(\vec{r}) \) and \( n_\downarrow(\vec{r}) \). Then, the Euler equation generalizes, and the minimization is done with both densities fixed separately.</p>
+
+  <p><a href="chapter1_3_1.html">← Back: 1.3.1 Introduction to Density Functionals</a> | <a href="chapter1_4_1.html">Next: 1.3.3  →</a></p>
+</body>
+</html>
