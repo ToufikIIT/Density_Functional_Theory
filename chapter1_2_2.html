@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.2.2 Wavefunctions for Non-interacting Electrons</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fefefe;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .eq {
+      background-color: #f8f8f8;
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      border-left: 4px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>1.2.2 Wavefunctions for Non-interacting Electrons</h1>
+
+  <p>This section focuses on the special case of <strong>non-interacting electrons</strong>, where the Hamiltonian simplifies and the many-electron wavefunction can be constructed from single-particle spin orbitals.</p>
+
+  <h2>🔷 Hamiltonian for Non-interacting Electrons</h2>
+  <div class="eq">
+    \[ 
+      \hat{H}_{\text{non}} = \sum_{i=1}^N \left[ -\frac{1}{2}\nabla_i^2 + v(\vec{r}_i) \right] 
+    \]
+    <p><em>(1.23)</em> — Independent-electron Hamiltonian</p>
+  </div>
+
+  <p>The one-electron eigenfunctions \( \psi_\alpha(\vec{r}, \sigma) \) solve this Hamiltonian. The many-body wavefunction is built from these spin orbitals via the Slater determinant:</p>
+
+  <div class="eq">
+    \[
+      \Phi = \frac{1}{\sqrt{N!}} \sum_P (-1)^P \psi_{\alpha_1}(P1) \psi_{\alpha_2}(P2) \cdots \psi_{\alpha_N}(PN)
+    \]
+    <p><em>(1.25)</em> — Slater determinant for antisymmetrization</p>
+  </div>
+
+  <p>This construction enforces the <strong>Pauli exclusion principle</strong>: no two electrons can occupy the same spin orbital. If any two \( \alpha_i = \alpha_j \), then \( \Phi = 0 \).</p>
+
+  <div class="eq">
+    \[
+      E_{\text{non}} = \varepsilon_{\alpha_1} + \varepsilon_{\alpha_2} + \cdots + \varepsilon_{\alpha_N}
+    \]
+    <p><em>(1.26)</em> — Total energy for non-interacting electrons</p>
+  </div>
+
+  <h2>🧪 Example: Helium Atom in Non-interacting Approximation</h2>
+  <p>For the ground state of the non-interacting helium atom (\( N = 2 \)):</p>
+  <div class="eq">
+    \[
+      \psi_1(\vec{r}, \sigma) = \psi_{1s}(\vec{r})\delta_{\sigma,\uparrow} \quad \text{(1.27)}
+    \]</div>
+  <div class="eq">
+    \[
+      \psi_2(\vec{r}, \sigma) = \psi_{1s}(\vec{r})\delta_{\sigma,\downarrow} \quad \text{(1.28)}
+    \]</div>
+
+  <p>The Slater determinant becomes:</p>
+  <div class="eq">
+    \[
+      \Phi(1,2) = \frac{1}{\sqrt{2}}
+      \begin{vmatrix}
+        \psi_1(\vec{r}_1, \sigma_1) & \psi_2(\vec{r}_1, \sigma_1) \\
+        \psi_1(\vec{r}_2, \sigma_2) & \psi_2(\vec{r}_2, \sigma_2)
+      \end{vmatrix}
+      = \psi_{1s}(\vec{r}_1)\psi_{1s}(\vec{r}_2) \frac{1}{\sqrt{2}}
+      (\delta_{\sigma_1,\uparrow}\delta_{\sigma_2,\downarrow} - \delta_{\sigma_1,\downarrow}\delta_{\sigma_2,\uparrow})
+    \]
+    <p><em>(1.29)</em> — Antisymmetric wavefunction for He</p>
+  </div>
+
+  <h2>🧠 Summary</h2>
+  <ul>
+    <li>Non-interacting systems allow simplification using one-electron spin orbitals.</li>
+    <li>The antisymmetrization via Slater determinants enforces Pauli exclusion.</li>
+    <li>The total energy is a sum of single-particle eigenvalues.</li>
+    <li>This formalism is foundational for constructing Kohn–Sham orbitals in DFT.</li>
+  </ul>
+
+  <p><a href="chapter1_2_1.html">← Back: 1.2.1 Wavefunctions and Their Interpretation</a> | <a href="chapter1_2_3.html">Next: 1.2.3 Wavefunction Variational Principle →</a></p>
+</body>
+</html>
