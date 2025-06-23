@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.2.3 Wavefunction Variational Principle</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fefefe;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .eq {
+      background-color: #f8f8f8;
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      border-left: 4px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>1.2.3 Wavefunction Variational Principle</h1>
+
+  <p>The variational principle is a cornerstone of quantum mechanics. It provides a method to approximate the ground state energy and wavefunction by minimizing the expectation value of the Hamiltonian under the normalization constraint:</p>
+
+  <div class="eq">
+    \[
+      \delta \left\{ \frac{\langle \Psi | \hat{H} | \Psi \rangle}{\langle \Psi | \Psi \rangle} \right\} = 0
+    \]
+    <p><em>(1.30)</em> — Variational principle with normalization</p>
+  </div>
+
+  <p>This is used to find the minimum energy configuration of a quantum system. The Rayleigh–Ritz method searches for this minimum over a restricted space of wavefunctions. One widely used approximation in quantum chemistry is the <strong>Hartree–Fock method</strong>, which finds the Slater determinant that minimizes the expectation value \( \langle \Phi | \hat{H} | \Phi \rangle / \langle \Phi | \Phi \rangle \).</p>
+
+  <p>More refined methods include:</p>
+  <ul>
+    <li><strong>Configuration interaction (CI):</strong> Combines multiple Slater determinants.</li>
+    <li><strong>Quantum Monte Carlo (QMC):</strong> Uses stochastic sampling with trial wavefunctions such as a Slater determinant times a correlation factor (e.g., Jastrow).</li>
+  </ul>
+
+  <p>These methods are computationally demanding, especially for large systems, which is where Density Functional Theory (DFT) becomes valuable.</p>
+
+  <h2>🔓 Lagrange Multiplier Formulation</h2>
+  <p>To handle the normalization constraint, we introduce a Lagrange multiplier \( E(\Psi) \) and reformulate the variational principle as an unconstrained optimization:</p>
+
+  <div class="eq">
+    \[
+      \delta \left\{ \langle \Psi | \hat{H} | \Psi \rangle - E(\Psi) \langle \Psi | \Psi \rangle \right\} = 0
+    \]
+    <p><em>(1.31)</em> — Unconstrained formulation using Lagrange multipliers</p>
+  </div>
+
+  <p>This leads to the Schrödinger equation as a condition for extremization:</p>
+  <div class="eq">
+    \[
+      \langle \delta \Psi | (\hat{H} - E) | \Psi \rangle = 0
+    \]
+    <p><em>(1.32)</em> — Equivalent to time-independent Schrödinger equation</p>
+  </div>
+
+  <h2>📌 Remarks</h2>
+  <ul>
+    <li>This formalism recovers the Schrödinger equation \( \hat{H}\Psi = E\Psi \).</li>
+    <li>Every eigenstate of \( \hat{H} \) is an extremum of the energy functional.</li>
+    <li>This principle also supports the derivation of the Hellmann–Feynman theorem.</li>
+  </ul>
+
+  <p><a href="chapter1_2_2.html">← Back: 1.2.2 Non-interacting Electrons</a> | <a href="chapter1_2_4.html">Next: 1.2.4 Hellmann–Feynman Theorem →</a></p>
+</body>
+</html>
