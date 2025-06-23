@@ -34,37 +34,82 @@
 <body>
   <h1>1.2.1 Wavefunctions and Their Interpretation</h1>
 
-  <p>In quantum mechanics, the physical state of an isolated system of electrons is described by a many-body wavefunction \( \Psi(\vec{r}_1, \ldots, \vec{r}_N) \). This complex-valued function is square-integrable and encodes all physical observables of the system.</p>
+  <p>This section introduces fundamental concepts of quantum mechanics relevant to DFT. We start with the description of one-particle states and gradually extend to many-particle systems, ultimately connecting wavefunctions to the electron density.</p>
 
-  <h2>Normalization</h2>
-  <p>The wavefunction must satisfy the normalization condition:</p>
+  <h2>🔹 One-Particle Quantum States</h2>
+  <p>Each electron has a spin quantum number \( s = 1/2 \), and the spin projection along the z-axis is \( \sigma = \pm 1/2 \), often denoted \( \uparrow \) or \( \downarrow \).</p>
+  <p>The Hamiltonian (energy operator) for an electron in an external potential \( v(\vec{r}) \) is given by:</p>
   <div class="eq">
     \[
-    \int d^3r_1 \cdots d^3r_N \; |\Psi(\vec{r}_1, \ldots, \vec{r}_N)|^2 = 1
+    \hat{h} = -\frac{1}{2} \nabla^2 + v(\vec{r}) \tag{1.13}
     \]</div>
-  <p>This ensures that the total probability of finding the electrons somewhere in space is unity.</p>
 
-  <h2>Antisymmetry and Fermions</h2>
-  <p>Because electrons are indistinguishable fermions, the wavefunction must be antisymmetric under the exchange of any two electron coordinates:</p>
+  <p>The Schrödinger equation defines the energy eigenstates \( \psi_\alpha(\vec{r}, \sigma) \) and eigenvalues \( \varepsilon_\alpha \):</p>
   <div class="eq">
     \[
-    \Psi(\ldots, \vec{r}_i, \ldots, \vec{r}_j, \ldots) = -\Psi(\ldots, \vec{r}_j, \ldots, \vec{r}_i, \ldots)
+    \hat{h}\psi_\alpha(\vec{r}, \sigma) = \varepsilon_\alpha \psi_\alpha(\vec{r}, \sigma) \tag{1.14}
     \]</div>
-  <p>This antisymmetry leads to the Pauli exclusion principle, which prevents any two electrons from occupying the same quantum state.</p>
 
-  <h2>Observables from the Wavefunction</h2>
-  <p>All measurable physical quantities (observables) of the system, such as energy or electron density, can be computed from \( \Psi \). In particular, the <strong>one-particle density</strong> is a key quantity in DFT, defined as:</p>
+  <h2>🔹 Probability and Normalization</h2>
+  <p>The quantity \( |\psi_\alpha(\vec{r},\sigma)|^2 \) gives the probability of finding an electron with spin \( \sigma \) at position \( \vec{r} \). The normalization condition is:</p>
   <div class="eq">
     \[
-    n(\vec{r}) = N \int d^3r_2 \ldots d^3r_N \; |\Psi(\vec{r}, \vec{r}_2, \ldots, \vec{r}_N)|^2
+    \sum_\sigma \int d^3r \; |\psi_\alpha(\vec{r},\sigma)|^2 = 1 \tag{1.15}
     \]</div>
-  <p>This gives the probability density of finding one electron at position \( \vec{r} \), independent of the positions of the other electrons.</p>
 
-  <h2>Interpretation of \( |\Psi|^2 \)</h2>
-  <p>The quantity \( |\Psi(\vec{r}_1, \ldots, \vec{r}_N)|^2 \) represents the probability density of finding the first electron near \( \vec{r}_1 \), the second near \( \vec{r}_2 \), and so on. This probabilistic interpretation is foundational to quantum mechanics.</p>
+  <h2>🔹 Many-Electron Systems</h2>
+  <p>We generalize to \( N \) interacting electrons. The total Hamiltonian becomes:</p>
+  <div class="eq">
+    \[
+    \hat{H} = -\frac{1}{2} \sum_{i=1}^N \nabla_i^2 + \sum_{i=1}^N v(\vec{r}_i) + \frac{1}{2} \sum_{i \ne j} \frac{1}{|\vec{r}_i - \vec{r}_j|} \tag{1.16}
+    \]</div>
+  <p>The last term represents the electron-electron repulsion.</p>
 
-  <h2>Why Use Densities?</h2>
-  <p>Although \( \Psi \) contains complete information, it depends on \( 3N \) variables, making it computationally intractable for large \( N \). In contrast, the one-particle density \( n(\vec{r}) \) depends only on 3 variables and is the basic quantity in DFT. The central idea of DFT is that all ground-state properties of a system are functionals of \( n(\vec{r}) \), not \( \Psi \).</p>
+  <p>The eigenstates \( \Psi_k(\vec{r}_1\sigma_1, \ldots, \vec{r}_N\sigma_N) \) satisfy:</p>
+  <div class="eq">
+    \[
+    \hat{H} \Psi_k = E_k \Psi_k \tag{1.17}
+    \]</div>
+
+  <h2>🔹 Fermionic Nature and Antisymmetry</h2>
+  <p>Electrons are fermions. Thus, the wavefunction must be antisymmetric under exchange of any two particles:</p>
+  <div class="eq">
+    \[
+    \Psi(\ldots, \vec{r}_i \sigma_i, \ldots, \vec{r}_j \sigma_j, \ldots) = -\Psi(\ldots, \vec{r}_j \sigma_j, \ldots, \vec{r}_i \sigma_i, \ldots) \tag{1.18}
+    \]</div>
+
+  <p>This property ensures the Pauli exclusion principle and results in an antisymmetric structure of the total wavefunction.</p>
+
+  <h2>🔹 Normalization in Many-Body Systems</h2>
+  <p>The many-body wavefunction \( \Psi \) must also be normalized. Considering all spin labels and configurations:</p>
+  <div class="eq">
+    \[
+    \frac{1}{N!} \sum_{\sigma_1 \ldots \sigma_N} \int d^3r_1 \cdots d^3r_N \; N! |\Psi(\vec{r}_1 \sigma_1, \ldots, \vec{r}_N \sigma_N)|^2 = 1 \tag{1.19}
+    \]</div>
+
+  <h2>🔹 Spin Density</h2>
+  <p>The spin-resolved electron density \( n_\sigma(\vec{r}) \) is defined as the probability of finding an electron with spin \( \sigma \) at position \( \vec{r} \):</p>
+  <div class="eq">
+    \[
+    n_\sigma(\vec{r}) = \frac{1}{(N-1)!} \sum_{\sigma_2 \ldots \sigma_N} \int d^3r_2 \cdots d^3r_N \; N |\Psi(\vec{r}\sigma, \vec{r}_2\sigma_2, \ldots, \vec{r}_N\sigma_N)|^2 \tag{1.20}
+    \]</div>
+
+  <p>This marginalizes over all electrons except one, giving us the local density at \( \vec{r} \).</p>
+
+  <h2>🔹 Sum Rule</h2>
+  <p>Integrating \( n_\sigma(\vec{r}) \) over all space and summing over spins gives the total number of electrons:</p>
+  <div class="eq">
+    \[
+    \sum_\sigma \int d^3r \; n_\sigma(\vec{r}) = N \tag{1.21}
+    \]</div>
+
+  <h2>🔹 Expectation Value of the External Potential</h2>
+  <p>We can write the expectation value of the external potential energy as:</p>
+  <div class="eq">
+    \[
+    \langle \hat{V}_{\text{ext}} \rangle = \langle \Psi | \sum_{i=1}^N v(\vec{r}_i) | \Psi \rangle = \int d^3r \; n(\vec{r}) v(\vec{r}) \tag{1.22}
+    \]</div>
+  <p>Where the total electron density \( n(\vec{r}) = n_\uparrow(\vec{r}) + n_\downarrow(\vec{r}) \) (see Eq. (1.4)).</p>
 
   <p><a href="chapter1_1_2.html">← Back: 1.1.2 Kohn–Sham Spin-Density Functional Theory</a> | <a href="chapter1_2_2.html">Next: 1.2.2 Non-interacting Electrons →</a></p>
 </body>
