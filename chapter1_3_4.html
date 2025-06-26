@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.3.4 Exchange and Correlation Energy</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fefefe;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    .eq {
+      background-color: #f8f8f8;
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      border-left: 4px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>1.3.4 Exchange and Correlation Energy</h1>
+
+  <p>One of the central strengths of Density Functional Theory (DFT) lies in how it accounts for the complex quantum mechanical effects of many-electron systems using the electron density \(n(\vec{r})\) as its primary variable. A key piece of this is the <strong>exchange-correlation energy functional</strong>, denoted \(E_{xc}[n]\). This term compactly represents the difference between the true many-body quantum energy and what is captured by a simple non-interacting reference system.</p>
+
+  <p>The exchange-correlation energy functional is generally split into two parts:</p>
+  <div class="eq">
+    \[ E_{xc}[n] = E_x[n] + E_c[n] \tag{1.64} \]
+  </div>
+  <p>Here:</p>
+  <ul>
+    <li><strong>Exchange energy</strong> \(E_x[n]\) arises from the antisymmetry of the wavefunction and is present even in the absence of electron correlation.</li>
+    <li><strong>Correlation energy</strong> \(E_c[n]\) captures the extra interactions due to the dynamic behavior of electrons avoiding each other due to Coulomb repulsion.</li>
+  </ul>
+
+  <h2>🔁 Exchange Energy</h2>
+  <p>The exchange energy can be formally written as:</p>
+  <div class="eq">
+    \[ E_x[n] = \langle \Phi^{\text{min}}_s | \hat{V}_{ee} | \Phi^{\text{min}}_s \rangle - U[n] \tag{1.65} \]
+  </div>
+  <p>Where:</p>
+  <ul>
+    <li>\( \Phi^{\text{min}}_s \): The Kohn–Sham determinant minimizing the kinetic energy among non-interacting wavefunctions yielding density \(n\).</li>
+    <li>\( \hat{V}_{ee} \): Electron–electron interaction operator.</li>
+    <li>\( U[n] \): The classical Hartree energy (i.e., electron–electron repulsion calculated via Coulomb's law).</li>
+  </ul>
+  <p>Physically, this equation subtracts the classical electrostatic energy to avoid counting electron self-repulsion.</p>
+
+  <p>Then, the total energy in this approximation becomes:</p>
+  <div class="eq">
+    \[ \langle \Phi^{\text{min}}_s | \hat{T} + \hat{V}_{ext} + \hat{V}_{ee} | \Phi^{\text{min}}_s \rangle = T_s[n] + U[n] + E_x[n] \tag{1.66} \]
+  </div>
+
+  <p>Notably, for one-electron systems:</p>
+  <div class="eq">
+    \[ E_x[n] = -U[n] \quad (N = 1) \tag{1.67} \]</div>
+  <p>ensuring exact cancellation of the unphysical self-interaction from \(U[n]\).</p>
+
+  <h2>🔗 Correlation Energy</h2>
+  <p>The correlation energy accounts for the additional complexity in real many-electron systems:</p>
+  <div class="eq">
+    \[ E_c[n] = F[n] - (T_s[n] + U[n] + E_x[n]) \tag{1.68} \]</div>
+  <p>It can also be seen as:</p>
+  <div class="eq">
+    \[ E_c[n] = \langle \Psi | \hat{T} + \hat{V}_{ee} | \Psi \rangle - \langle \Phi^{\text{min}}_s | \hat{T} + \hat{V}_{ee} | \Phi^{\text{min}}_s \rangle \tag{1.68'} \]</div>
+  <p>Here \(\Psi\) is the exact interacting ground state. The difference between interacting and non-interacting expectations defines \(E_c[n]\).</p>
+
+  <div class="eq">
+    \[ E_c[n] \leq 0 \tag{1.69} \]
+  </div>
+  <div class="eq">
+    \[ E_c[n] = 0 \quad (N = 1) \tag{1.70} \]</div>
+  <p>Thus, the correlation energy is always non-positive and vanishes for a single electron — a useful boundary condition for testing functionals.</p>
+
+  <h2>⚖️ Self-Interaction Cancellation</h2>
+  <p>The design of accurate \(E_{xc}[n]\) functionals ensures cancellation of unphysical self-interaction energies. This includes both the classical self-Coulomb term \(U[n]\) and related spurious exchange terms.</p>
+
+  <div class="eq">
+    \[ \frac{\delta E_x[n]}{\delta n(\vec{r})} = -u([n]; \vec{r}) \tag{1.71} \]</div>
+  <p>And for the one-electron limit:</p>
+  <div class="eq">
+    \[ \frac{\delta E_c[n]}{\delta n(\vec{r})} = 0 \quad (N = 1) \tag{1.72} \]</div>
+  <div class="eq">
+    \[ \lim_{r \to \infty} \frac{\delta E_{xc}[n]}{\delta n(r)} = -\frac{1}{r} \tag{1.73} \]</div>
+
+  <h2>📌 Summary</h2>
+  <p>In summary, the exchange-correlation energy functional:</p>
+  <ul>
+    <li>Bridges the gap between non-interacting reference systems and real quantum systems.</li>
+    <li>Encodes the effects of antisymmetry and dynamic electron correlation.</li>
+    <li>Is central to the predictive power and accuracy of DFT.</li>
+  </ul>
+
+  <p><a href="chapter1_3_3.html">← Back: 1.3.3 Kohn–Sham Non-interacting System</a> | <a href="chapter1_3_5.html">Next: →</a></p>
+</body>
+</html>
