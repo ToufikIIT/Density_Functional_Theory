@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.3.3 Kohn–Sham Non-interacting System</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      max-width: 850px;
+      margin: auto;
+      background-color: #fefefe;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    .eq {
+      background-color: #f8f8f8;
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      border-left: 4px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>1.3.3 Kohn–Sham Non-interacting System</h1>
+
+  <p>For a system of non-interacting electrons, the electron-electron repulsion \( \hat{V}_{ee} \) vanishes, so \( F[n] \) reduces to:</p>
+
+  <div class="eq">
+    \[ T_s[n] = \min_{\Psi \rightarrow n} \langle \Psi | \hat{T} | \Psi \rangle = \langle \Psi^{\text{min}}_s | \hat{T} | \Psi^{\text{min}}_s \rangle \tag{1.59} \]
+  </div>
+
+  <p>Although we could search over all antisymmetric \( N \)-electron wavefunctions as in Eq. (1.54), the minimizing wavefunction \( \Psi^{\text{min}}_s \) will be non-interacting — a single Slater determinant or linear combination of a few — for some potential \( v_s(\vec{r}) \).</p>
+
+  <p>The corresponding Euler equation becomes:</p>
+  <div class="eq">
+    \[ \frac{\delta T_s[n]}{\delta n(\vec{r})} + v_s(\vec{r}) = \mu \tag{1.60} \]
+  </div>
+
+  <p>Just as in Eq. (1.58). Hence, \( v_s(\vec{r}) \) is a functional of \( n(\vec{r}) \). If \( \mu \) and \( \mu_s \) differed, we could absorb it into \( v_s \). So we assume \( n(\vec{r}) \) is both interacting and non-interacting \( v \)-representable.</p>
+
+  <p>Now we define the exchange–correlation energy \( E_{xc}[n] \) via:</p>
+  <div class="eq">
+    \[ F[n] = T_s[n] + U[n] + E_{xc}[n] \tag{1.61} \]
+  </div>
+
+  <p>where \( U[n] \) is the classical Coulomb repulsion (as defined earlier). Now the Euler equations (1.58) and (1.60) yield:</p>
+  <div class="eq">
+    \[ v_s(\vec{r}) = v(\vec{r}) + \frac{\delta U[n]}{\delta n(\vec{r})} + \frac{\delta E_{xc}[n]}{\delta n(\vec{r})} \tag{1.62} \]
+  </div>
+
+  <p>So we recover the Kohn–Sham potential, matching Eq. (1.19) of Sect. 1.1.2.</p>
+
+  <p>Here, \( T_s[n] \) is exact, and all approximation lies in \( E_{xc}[n] \). This is reasonable because:</p>
+  <ul>
+    <li>\( T_s[n] \) is the dominant part of \( F[n] \), while \( E_{xc}[n] \) is small</li>
+    <li>\( T_s[n] \) causes oscillations due to shell structure, which approximate functionals often fail to capture</li>
+    <li>\( T_s[n] \) is easily captured in Kohn–Sham approach</li>
+  </ul>
+
+  <p>The total energy can now be written as:</p>
+  <div class="eq">
+    \[ E = \sum_{i=1}^N \varepsilon_i - \int d^3r\, n(\vec{r}) v_{xc}[n](\vec{r}) + E_{xc}[n] \tag{1.63} \]
+  </div>
+
+  <p>This expression accounts for overcounting of exchange-correlation energy in \( \sum \varepsilon_i \) and subtracts it out, adding back \( E_{xc}[n] \).</p>
+
+  <p><a href="chapter1_3_2.html">← Back: 1.3.2 Density Variational Principle</a> | <a href="chapter1_3_4.html">Next: 1.3.4 Exchange–Correlation Energy →</a></p>
+</body>
+</html>
